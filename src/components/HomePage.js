@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
 import styled from 'react-emotion'
+import { GoogleApiWrapper } from 'google-maps-react'
 
+import App from '../App'
+import GoogleMaps from '../components/GoogleMaps'
 import ActivityItem from './ActivityItem'
 import FooterView from '../containers/FooterView'
 import titleImage from '../images/Discover_Background.png'
@@ -31,7 +34,7 @@ const imageStyle = css`
   height: auto;
 `
 
-export default class HomePage extends Component {
+export class HomePage extends Component {
   render() {
     return (
       <Grid>
@@ -56,8 +59,16 @@ export default class HomePage extends Component {
               )
             })}
         </List>
+        <div>
+          <h1> Google Maps </h1> // title
+          <GoogleMaps google={this.props.google} />
+        </div>
         <FooterView />
       </Grid>
     )
   }
 }
+
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyAKXVdAI7mTaOh7niNBgTrxv93kI5v-Qaw',
+})(HomePage)

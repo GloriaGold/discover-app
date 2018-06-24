@@ -15,7 +15,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-class App extends Component {
+export default class App extends Component {
   render() {
     const state = store.getState()
     return (
@@ -35,5 +35,3 @@ class App extends Component {
     )
   }
 }
-
-export default App
