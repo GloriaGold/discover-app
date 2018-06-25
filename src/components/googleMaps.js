@@ -2,41 +2,59 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 export default class googleMaps extends Component {
+  state = {
+    locations: [
+      {
+        name: 'standup paddeling',
+        location: {
+          lat: 53.5627626,
+          lng: 9.9910404,
+        },
+      },
+    ],
+  }
+
   componentDidUpdate() {
-    this.loadMap() // call loadMap function to load the google map
+    this.loadMap()
   }
 
   componentDidMount() {
-    this.loadMap() // call loadMap function to load the google map
+    this.loadMap()
   }
 
   loadMap() {
     if (this.props && this.props.google) {
-      // checks to make sure that props have been passed
-      const { google } = this.props // sets props equal to google
-      const maps = google.maps // sets maps to google maps props
+      const { google } = this.props
+      const maps = google.maps
 
-      const mapRef = this.refs.map // looks for HTML div ref 'map'. Returned in render below.
-      const node = ReactDOM.findDOMNode(mapRef) // finds the 'map' div in the React DOM, names it node
+      const mapRef = this.refs.map
+      const node = ReactDOM.findDOMNode(mapRef)
 
       const mapConfig = Object.assign(
         {},
         {
-          center: { lat: 53.551085, lng: 9.993682 }, // sets center of google map to NYC.
-          zoom: 11, // sets zoom. Lower numbers are zoomed further out.
-          mapTypeId: 'roadmap', // optional main map layer. Terrain, satellite, hybrid or roadmap--if unspecified, defaults to roadmap.
+          center: { lat: 53.551085, lng: 9.993682 },
+          zoom: 11,
+          mapTypeId: 'roadmap',
         }
       )
 
-      this.map = new maps.Map(node, mapConfig) // creates a new Google map on the specified node (ref='map') with the specified configuration set above.
+      this.map = new maps.Map(node, mapConfig)
+
+      this.state.locations.forEach(location => {
+        const marker = new google.maps.Marker({
+          position: { lat: location.location.lat, lng: location.location.lng },
+          map: this.map,
+          title: location.name,
+        })
+      })
     }
   }
 
   render() {
     const style = {
-      // MUST specify dimensions of the Google map or it will not work. Also works best when style is specified inside the render function and created as an object
-      width: '90vw', // 90vw basically means take up 90% of the width screen. px also works.
-      height: '75vh', // 75vh similarly will take up roughly 75% of the height of the screen. px also works.
+      width: '98%',
+      height: '75vh',
     }
 
     return (

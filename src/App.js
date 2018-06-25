@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/reducer'
 import initialState from './reducers/initialState'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import ShowMap from './components/ShowMap'
 
 const store = createStore(
   reducer,
@@ -27,6 +28,12 @@ export default class App extends Component {
               path={`/information/:id`}
               render={props => (
                 <DetailPage match={props.match} activities={state.activities} />
+              )}
+            />
+            <Route
+              path={`/maps/`}
+              render={props => (
+                <ShowMap google={props.google} onClick={props.toggleFilter} />
               )}
             />
           </div>

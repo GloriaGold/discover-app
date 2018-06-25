@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { GoogleApiWrapper } from 'google-maps-react'
 
-import GoogleMaps from '../components/GoogleMaps'
 import { css } from 'emotion'
 import styled from 'react-emotion'
 
@@ -81,7 +79,7 @@ const buttonStyle = css`
   font-weight: 100;
 `
 
-export class ActivityDetails extends Component {
+export default class ActivityDetails extends Component {
   render() {
     const { activity, subtitle, description, image } = this.props
 
@@ -100,21 +98,17 @@ export class ActivityDetails extends Component {
               <div className={subtitleStyling}>{subtitle} </div>
               <div className={innerText}>{description}</div>
             </div>
-            <button className={buttonStyle}>
-              find in Maps <img src={locationIcon} alt="locationIcon" />
-            </button>
+            <Link to={`/maps/`}>
+              <button className={buttonStyle}>
+                find in Maps
+                <img src={locationIcon} alt="location" />
+              </button>
+            </Link>
           </Section>
-          <div>
-            <h1> Google Maps </h1>
-            <GoogleMaps google={this.props.google} />
-          </div>
+
           <FooterView />
         </Grid>
       </div>
     )
   }
 }
-
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyB8tcT8DxCIABGEW-YHWh7WfA0voCjXZPQ',
-})(ActivityDetails)

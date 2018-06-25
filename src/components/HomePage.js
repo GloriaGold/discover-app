@@ -5,6 +5,7 @@ import styled from 'react-emotion'
 import ActivityItem from './ActivityItem'
 import FooterView from '../containers/FooterView'
 import titleImage from '../images/Discover_Background.png'
+import discover from '../images/discoverstart.png'
 
 const Grid = styled('div')`
   display: grid;
@@ -15,7 +16,7 @@ const List = styled('div')`
   grid-row: 2;
   overflow: scroll;
 `
-
+const StartImage = styled('div')``
 const Title = styled('div')`
   grid-row: 1;
   background-color: #d6c1f5;
@@ -34,31 +35,36 @@ const imageStyle = css`
 export default class HomePage extends Component {
   render() {
     return (
-      <Grid>
-        <Title>ACTIVITIES</Title>
-        <List>
-          <img className={imageStyle} src={titleImage} alt="discover" />
+      <div>
+        <StartImage>
+          <img src={discover} alt="discover" />
+        </StartImage>
+        <Grid>
+          <Title>ACTIVITIES</Title>
+          <List>
+            <img className={imageStyle} src={titleImage} alt="discover" />
 
-          {this.props.activities
-            .filter(
-              activity => (this.props.filter ? activity.isBookmarked : true)
-            )
-            .map(activity => {
-              return (
-                <div key={activity.id}>
-                  <ActivityItem
-                    id={activity.id}
-                    text={activity.activity}
-                    isBookmarked={activity.isBookmarked}
-                    bookmark={id => this.props.bookmark(id)}
-                  />
-                </div>
+            {this.props.activities
+              .filter(
+                activity => (this.props.filter ? activity.isBookmarked : true)
               )
-            })}
-        </List>
+              .map(activity => {
+                return (
+                  <div key={activity.id}>
+                    <ActivityItem
+                      id={activity.id}
+                      text={activity.activity}
+                      isBookmarked={activity.isBookmarked}
+                      bookmark={id => this.props.bookmark(id)}
+                    />
+                  </div>
+                )
+              })}
+          </List>
 
-        <FooterView />
-      </Grid>
+          <FooterView />
+        </Grid>
+      </div>
     )
   }
 }

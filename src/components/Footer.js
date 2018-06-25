@@ -9,6 +9,7 @@ const StyledFooter = styled('div')`
   background-color: white;
   position: fixed;
   bottom: 0;
+
   width: 100%;
   border-top: 1px solid lightgrey;
   padding: 4px 0;
