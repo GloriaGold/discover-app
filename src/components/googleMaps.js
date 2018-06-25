@@ -6,6 +6,10 @@ export default class googleMaps extends Component {
     this.loadMap() // call loadMap function to load the google map
   }
 
+  componentDidMount() {
+    this.loadMap() // call loadMap function to load the google map
+  }
+
   loadMap() {
     if (this.props && this.props.google) {
       // checks to make sure that props have been passed
@@ -18,7 +22,7 @@ export default class googleMaps extends Component {
       const mapConfig = Object.assign(
         {},
         {
-          center: { lat: 40.7485722, lng: -74.0068633 }, // sets center of google map to NYC.
+          center: { lat: 53.551085, lng: 9.993682 }, // sets center of google map to NYC.
           zoom: 11, // sets zoom. Lower numbers are zoomed further out.
           mapTypeId: 'roadmap', // optional main map layer. Terrain, satellite, hybrid or roadmap--if unspecified, defaults to roadmap.
         }

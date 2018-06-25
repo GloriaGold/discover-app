@@ -18,9 +18,9 @@ export default class Footer extends Component {
   render() {
     return (
       <StyledFooter>
-        <button onClick={this.props.toggleFilter}>
+        <div onClick={this.props.toggleFilter}>
           <img src={favoriteIcon} alt="icon" />
-        </button>
+        </div>
       </StyledFooter>
     )
   }

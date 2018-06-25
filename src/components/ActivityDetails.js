@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { GoogleApiWrapper } from 'google-maps-react'
 
+import GoogleMaps from '../components/GoogleMaps'
 import { css } from 'emotion'
 import styled from 'react-emotion'
 
 import backArrow from '../images/backArrow.svg'
+import locationIcon from '../images/locationIcon.svg'
 import FooterView from '../containers/FooterView'
 
 const Grid = styled('div')`
@@ -65,7 +68,20 @@ const subtitleStyling = css`
   font-size: 24px;
 `
 
-export default class ActivityDetails extends Component {
+const buttonStyle = css`
+  background-color: white;
+  height: 54px;
+  width: 335px;
+  color: grey;
+  font-size: 22px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin: 35px 0 20px 8px;
+  letter-spacing: 1px;
+  font-weight: 100;
+`
+
+export class ActivityDetails extends Component {
   render() {
     const { activity, subtitle, description, image } = this.props
 
@@ -81,13 +97,24 @@ export default class ActivityDetails extends Component {
           <Section>
             <div className={textBox}>
               <img className={imageStyle} src={image} alt="activity" />
-              <div className={subtitleStyling}>ich bin ein Untertitel </div>
+              <div className={subtitleStyling}>{subtitle} </div>
               <div className={innerText}>{description}</div>
             </div>
+            <button className={buttonStyle}>
+              find in Maps <img src={locationIcon} alt="locationIcon" />
+            </button>
           </Section>
+          <div>
+            <h1> Google Maps </h1>
+            <GoogleMaps google={this.props.google} />
+          </div>
           <FooterView />
         </Grid>
       </div>
     )
   }
 }
+
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyB8tcT8DxCIABGEW-YHWh7WfA0voCjXZPQ',
+})(ActivityDetails)
