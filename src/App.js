@@ -9,6 +9,7 @@ import reducer from './reducers/reducer'
 import initialState from './reducers/initialState'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ShowMap from './components/ShowMap'
+import LogIn from './components/LogIn'
 
 const store = createStore(
   reducer,
@@ -23,7 +24,8 @@ export default class App extends Component {
       <Router>
         <Provider store={store}>
           <div>
-            <Route exact path="/" component={HomePageView} />
+            <Route exact path="/" component={LogIn} />
+            <Route path={'/home'} component={HomePageView} />
             <Route
               path={`/information/:id`}
               render={props => (

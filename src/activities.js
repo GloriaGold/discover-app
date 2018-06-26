@@ -13,8 +13,44 @@ import bowlen from './images/bowling.jpg'
 import wandern from './images/wandern.jpg'
 import shoppen from './images/shopping.jpg'
 import roadtrip from './images/roadtrip.jpg'
+import planetarium from './images/planetarium.jpg'
 
 const initialActivities = [
+  {
+    activity: 'Standup paddeling',
+    image: standupPaddeling,
+    category: 'sport',
+    checked: false,
+    description:
+      'Man kann SUP wunderbar gemeinsam betreiben, auch für Kinder geht das oder für Menschen, die sich gar nicht für so sportlich halten oder lange keinen Sport mehr gemacht haben - wenn sie schwimmen können',
+    subtitle: 'Standup paddeling der Neuste Trend!',
+    isBookmarked: false,
+    id: uid(),
+  },
+
+  {
+    activity: 'Planetarium',
+    image: planetarium,
+    category: 'indoor',
+    checked: false,
+    description:
+      'Es erwarten Sie spannende Reisen durch die Weiten des Universums in atemberaubenden 360-Grad-Aufnahmen, Lasershows und in 3D Das Planetarium Hamburg ist eines von neun Großplanetarien und das meistbesuchte Sternentheater in Deutschland.',
+    subtitle: 'Sei den Sternen ganz nah',
+    isBookmarked: false,
+    id: uid(),
+  },
+
+  {
+    activity: 'Bowlen',
+    image: bowlen,
+    category: 'group',
+    checked: false,
+    description:
+      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
+    subtitle: 'ich bin die Teilüberschrift',
+    isBookmarked: false,
+    id: uid(),
+  },
   {
     activity: 'schwimmen',
     image: swim,
@@ -61,17 +97,7 @@ const initialActivities = [
     isBookmarked: false,
     id: uid(),
   },
-  {
-    activity: 'Standup paddeling',
-    image: standupPaddeling,
-    category: 'sport',
-    checked: false,
-    description:
-      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
-    isBookmarked: false,
-    id: uid(),
-  },
+
   {
     activity: 'Spieleabend',
     image: game,
@@ -83,17 +109,7 @@ const initialActivities = [
     isBookmarked: false,
     id: uid(),
   },
-  {
-    activity: 'Planetarium',
-    image: concert,
-    category: 'indoor',
-    checked: false,
-    description:
-      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
-    isBookmarked: false,
-    id: uid(),
-  },
+
   {
     activity: 'Konzert',
     image: concert,
@@ -127,17 +143,7 @@ const initialActivities = [
     isBookmarked: false,
     id: uid(),
   },
-  {
-    activity: 'Bowlen',
-    image: bowlen,
-    category: 'group',
-    checked: false,
-    description:
-      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
-    isBookmarked: false,
-    id: uid(),
-  },
+
   {
     activity: 'Wandern',
     image: wandern,

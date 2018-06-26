@@ -45,7 +45,7 @@ const imageStyle = css`
 `
 const textBox = css`
   grid-row: 2;
-  height: 330px;
+  height: 426px;
   background-color: white;
   border-radius: 18px;
   margin: 140px 10px 0 10px;
@@ -84,31 +84,27 @@ export default class ActivityDetails extends Component {
     const { activity, subtitle, description, image } = this.props
 
     return (
-      <div>
-        <Grid>
-          <Header>
-            <Link to={`/`}>
-              <img src={backArrow} alt="backArrow" />
-            </Link>
-            <Title>{activity}</Title>
-          </Header>
-          <Section>
-            <div className={textBox}>
-              <img className={imageStyle} src={image} alt="activity" />
-              <div className={subtitleStyling}>{subtitle} </div>
-              <div className={innerText}>{description}</div>
-            </div>
-            <Link to={`/maps/`}>
-              <button className={buttonStyle}>
-                find in Maps
-                <img src={locationIcon} alt="location" />
-              </button>
-            </Link>
-          </Section>
-
-          <FooterView />
-        </Grid>
-      </div>
+      <Grid>
+        <Header>
+          <Link to={`/`}>
+            <img src={backArrow} alt="backArrow" />
+          </Link>
+          <Title>{activity}</Title>
+        </Header>
+        <Section>
+          <div className={textBox}>
+            <img className={imageStyle} src={image} alt="activity" />
+            <div className={subtitleStyling}>{subtitle} </div>
+            <div className={innerText}>{description}</div>
+          </div>
+          <Link to={`/maps/`}>
+            <button className={buttonStyle}>
+              find in Maps
+              <img src={locationIcon} alt="location" />
+            </button>
+          </Link>
+        </Section>
+      </Grid>
     )
   }
 }
