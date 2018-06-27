@@ -27,6 +27,10 @@ const textStyle = css`
   text-decoration: none;
   color: #9b9b9b;
 `
+
+const margin = css`
+  margin: 20px;
+`
 export default class ActivityItem extends Component {
   render() {
     const { text, isBookmarked, id } = this.props
@@ -41,12 +45,13 @@ export default class ActivityItem extends Component {
       background-size: cover;
       border: none;
       color: white;
+      margin: 23px;
     `
 
     return (
       <div>
         <StyledActivity>
-          <div>
+          <div className={margin}>
             <Link className={textStyle} to={`/information/${id}`}>
               {text}
             </Link>

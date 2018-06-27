@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { GoogleApiWrapper } from 'google-maps-react'
 
 import GoogleMaps from '../components/GoogleMaps'
-import Footer from '../components/Footer'
 import backArrow from '../images/backArrow.svg'
 
 import styled from 'react-emotion'
@@ -44,7 +43,7 @@ export class ShowMap extends Component {
       <div>
         <Grid>
           <Header>
-            <Link to={`/`}>
+            <Link to={`/home`}>
               <img src={backArrow} alt="backArrow" />
             </Link>
             <Title>Google Maps</Title>
@@ -54,8 +53,6 @@ export class ShowMap extends Component {
               <GoogleMaps google={this.props.google} />
             </div>
           </Section>
-
-          <Footer />
         </Grid>
       </div>
     )

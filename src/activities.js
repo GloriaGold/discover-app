@@ -17,13 +17,13 @@ import planetarium from './images/planetarium.jpg'
 
 const initialActivities = [
   {
-    activity: 'Standup paddeling',
+    activity: 'Standup Paddeling',
     image: standupPaddeling,
     category: 'sport',
     checked: false,
     description:
       'Man kann SUP wunderbar gemeinsam betreiben, auch für Kinder geht das oder für Menschen, die sich gar nicht für so sportlich halten oder lange keinen Sport mehr gemacht haben - wenn sie schwimmen können',
-    subtitle: 'Standup paddeling der Neuste Trend!',
+    subtitle: 'Standup Paddeling der neuste Trend!',
     isBookmarked: false,
     id: uid(),
   },
@@ -41,37 +41,37 @@ const initialActivities = [
   },
 
   {
-    activity: 'Bowlen',
+    activity: 'Bowling',
     image: bowlen,
     category: 'group',
     checked: false,
     description:
-      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
+      'Bowling ist eine Ende des 19. Jahrhunderts in den Vereinigten Staaten entstandene Variante des Präzisionssports Kegeln.Dabei wird ein mit Bohrungen für die Finger versehener Ball auf eine Formation von zehn Pins genannten Kegeln geworfen',
+    subtitle: ' Der Klassiker aus Amerika',
     isBookmarked: false,
     id: uid(),
   },
   {
-    activity: 'schwimmen',
+    activity: 'Schwimmen',
     image: swim,
     category: 'sport',
     checked: false,
 
     description:
-      'Ich bin ein Beispieltext ondonsfoansnfonasfon sund werde später ausführlicher ausgearbeitet. ',
-    subtitle: 'ich bin die Teilüberschrift',
+      'Die Badehose ist eingepackt – doch in welches der zahlreichen Hamburger Schwimmbäder soll es eigentlich gehen? Familien haben da andere Vorlieben als Berufstätige, die zügig ihre Bahnen ziehen wollen. ',
+    subtitle: 'Der Spaß für Groß und klein',
     isBookmarked: false,
 
     id: uid(),
   },
   {
-    activity: 'grillen',
+    activity: 'Grillen',
     image: grillen,
     category: 'group',
     checked: false,
     description:
-      'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
+      'Im Sommer einen geeigneten Grillplatz zu finden, wenn man nicht gerade einen eigenen Garten im Hinterhof hat, ist manchmal gar nicht so einfach.',
+    subtitle: 'Zeig den Grillmeister in Dir',
     isBookmarked: false,
     id: uid(),
   },
@@ -82,7 +82,7 @@ const initialActivities = [
     checked: false,
     description:
       'ich bin ein Beispieltext und werde später ausführlicher ausgearbeitet',
-    subtitle: 'ich bin die Teilüberschrift',
+    subtitle: 'lets Dance!',
     isBookmarked: false,
     id: uid(),
   },

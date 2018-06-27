@@ -6,7 +6,6 @@ import styled from 'react-emotion'
 
 import backArrow from '../images/backArrow.svg'
 import locationIcon from '../images/locationIcon.svg'
-import FooterView from '../containers/FooterView'
 
 const Grid = styled('div')`
   display: grid;
@@ -86,7 +85,7 @@ export default class ActivityDetails extends Component {
     return (
       <Grid>
         <Header>
-          <Link to={`/`}>
+          <Link to={`/home`}>
             <img src={backArrow} alt="backArrow" />
           </Link>
           <Title>{activity}</Title>
