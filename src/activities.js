@@ -87,7 +87,7 @@ const initialActivities = [
     id: uid(),
   },
   {
-    activity: 'fotografieren',
+    activity: 'Fotografieren',
     image: foto,
     category: 'outdoor',
     checked: false,
